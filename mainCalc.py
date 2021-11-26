@@ -21,6 +21,9 @@ def tax():
         uk(a, b, owed, perc)
     elif a.get().lower() == "us" or a.get().lower() == "usa":
         states(a, b, owed, perc)
+    else:
+        owed.config(text = "Invalid input")
+        perc.config(text = "null%")
 
 #Collecting input to calculate based on country
 Label(win, text="Enter country: ", font = "Bahnschrift 11").place(x = "50", y = "40")
