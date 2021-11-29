@@ -35,9 +35,11 @@ Label(win, text="Enter income: ", font = "Bahnschrift 11").place(x = "50", y = "
 b = Entry(win, width=20)
 b.place(x = "50", y = "180")
 
-Button(win, text="Calculate", font = "Bahnschrift 11", height = "1", width = "15", comman = tax).place(x = "50", y = "255")
+#Creating buttons
+Button(win, text="Calculate", font = "Bahnschrift 11", height = "1", width = "15", command = tax).place(x = "50", y = "255")
 Button(win, text="End program", font = "Bahnschrift 11", height = "1", width = "15", command = win.quit).place(x = "300", y = "255")
 
+#Placeholder labbels to fill in tax owed and percentage
 owed = Label(win, text="<tax owed>", font = "Bahnschrift 11")
 owed.place(x = "330", y = "65")
 
