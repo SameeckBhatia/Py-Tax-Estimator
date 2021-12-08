@@ -13,13 +13,13 @@ win.geometry("610x350")
 
 #Defining tax function
 def tax():
-    if variable.get() == "Australia" and b.get() is int:
+    if variable.get() == "Australia":
         australia(a, b, owed, perc, net)
-    elif variable.get() == "Canada" and b.get() is int:
+    elif variable.get() == "Canada":
         canada(a, b, owed, perc, net)
-    elif variable.get() == "UK" and b.get() is int:
+    elif variable.get() == "UK":
         uk(a, b, owed, perc, net)
-    elif variable.get() == "USA" and b.get() is int:
+    elif variable.get() == "USA":
         states(a, b, owed, perc, net)
     else:
         owed.config(text = "null", font = "Courier 11 bold")
