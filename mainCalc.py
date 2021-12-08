@@ -8,27 +8,32 @@ from canCode import canada; from amCode import states
 windll.shcore.SetProcessDpiAwareness(1)
 
 #Creating window and setting size
-win=Tk()
-win.geometry("550x350")
+win = Tk()
+win.geometry("610x350")
 
 #Defining tax function
 def tax():
-    if a.get().lower() == "australia":
+    if variable.get() == "Australia" and b.get() is int:
         australia(a, b, owed, perc, net)
-    elif a.get().lower() == "canada":
+    elif variable.get() == "Canada" and b.get() is int:
         canada(a, b, owed, perc, net)
-    elif a.get().lower() == "uk":
+    elif variable.get() == "UK" and b.get() is int:
         uk(a, b, owed, perc, net)
-    elif a.get().lower() == "us" or a.get().lower() == "usa":
+    elif variable.get() == "USA" and b.get() is int:
         states(a, b, owed, perc, net)
     else:
-        owed.config(text = "invalid", font = "Courier 11 bold")
-        net.config(text = "invalid", font = "Courier 11 bold")
+        owed.config(text = "null", font = "Courier 11 bold")
+        net.config(text = "null", font = "Courier 11 bold")
         perc.config(text = "null", font = "Courier 11 bold")
 
-#Collecting input to calculate based on country
-Label(win, text = "Enter country: ", font = "Bahnschrift 11").place(x = "50", y = "40")
-a = Entry(win, width = 20)
+#Collecting input from dropdown
+choices = ["Australia", "Canada", "UK", "USA"]
+variable = StringVar()
+variable.set('-----')
+
+Label(win, text = "Select country: ", font = "Bahnschrift 11").place(x = "50", y = "40")
+a = OptionMenu(win, variable, *choices)
+a.config(width = "13", font = "Bahnschrift 9")
 a.place(x = "50", y = "80")
 
 #Collecting income to calculate tax owed
@@ -36,16 +41,20 @@ Label(win, text = "Enter income: ", font = "Bahnschrift 11").place(x = "50", y =
 b = Entry(win, width = 20)
 b.place(x = "50", y = "180")
 
-Button(win, text="Calculate", font = "Bahnschrift 11", height = "1", width = "15", comman = tax).place(x = "50", y = "255")
-Button(win, text="End program", font = "Bahnschrift 11", height = "1", width = "15", command = win.quit).place(x = "300", y = "255")
+#Buttons and labels
+Button(win, text = "Calculate", font = "Bahnschrift 11", height = "1", width = "15", command = tax).place(x = "50", y = "255")
+Button(win, text = "End program", font = "Bahnschrift 11", height = "1", width = "15", command = win.quit).place(x = "300", y = "255")
 
-owed = Label(win, text = "<tax owed>", font = "Bahnschrift 11")
-owed.place(x = "330", y = "50")
+Label(win, text = "Tax owed:", font = "Bahnschrift 11").place(x = "300", y = "50")
+owed = Label(win, font = "Bahnschrift 11")
+owed.place(x = "450", y = "50")
 
-net = Label(win, text = "<net income>", font = "Bahnschrift 11")
-net.place(x = "330", y = "115")
+Label(win, text = "Net income:", font = "Bahnschrift 11").place(x = "300", y = "115")
+net = Label(win, font = "Bahnschrift 11")
+net.place(x = "450", y = "115")
 
-perc = Label(win, text = "<tax percent>", font = "Bahnschrift 11")
-perc.place(x = "330", y = "180")
+Label(win, text = "Tax percent:", font = "Bahnschrift 11").place(x = "300", y = "180")
+perc = Label(win, font = "Bahnschrift 11")
+perc.place(x = "450", y = "180")
 
 win.mainloop()
