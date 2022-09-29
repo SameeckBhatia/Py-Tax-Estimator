@@ -1,7 +1,7 @@
 def canada(a, b, owed, perc, net):
     cantx = [0.15, 0.205, 0.26, 0.29, 0.33]
     canbrk = [0, 50197, 100392, 155625, 221708]
-    sd = 13229
+    sd = 14398
     inc = int(b.get())
    
     if inc in range(canbrk[0], sd):
