@@ -53,7 +53,8 @@ def australia(b, owed, perc, net):
         #appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
     
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + \
+                sum_below[j - 1])
     
             sum_below.append(s)
         
@@ -71,9 +72,9 @@ def australia(b, owed, perc, net):
                 tax = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
                 percent = (tax / income) * 100
     
-            elif income > federal_brackets[-1]:
+            elif income >= federal_brackets[-1]:
     
-                tax = (income - federal_brackets[i]) * federal_rates[-1] + sum_below[-1]
+                tax = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
                 percent = (tax / income) * 100
         
         #output values to user
@@ -107,7 +108,8 @@ def canada(b, owed, perc, net):
         #appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
     
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + \
+                sum_below[j - 1])
     
             sum_below.append(s)
         
@@ -125,9 +127,9 @@ def canada(b, owed, perc, net):
                 tax = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
                 percent = (tax / (income + sd)) * 100
     
-            elif income > federal_brackets[-1]:
+            elif income >= federal_brackets[-1]:
     
-                tax = (income - federal_brackets[i]) * federal_rates[-1] + sum_below[-1]
+                tax = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
                 percent = (tax / (income + sd)) * 100
         
         #output values to user
@@ -160,7 +162,8 @@ def uk(b, owed, perc, net):
         #appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
     
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + \
+                sum_below[j - 1])
     
             sum_below.append(s)
         
@@ -178,9 +181,9 @@ def uk(b, owed, perc, net):
                 tax = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
                 percent = (tax / income) * 100
     
-            elif income > federal_brackets[-1]:
+            elif income >= federal_brackets[-1]:
     
-                tax = (income - federal_brackets[i]) * federal_rates[-1] + sum_below[-1]
+                tax = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
                 percent = (tax / income) * 100
         
         #output values to user
@@ -214,7 +217,8 @@ def states(b, owed, perc, net):
         #appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
     
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + \
+                sum_below[j - 1])
     
             sum_below.append(s)
         
@@ -232,9 +236,9 @@ def states(b, owed, perc, net):
                 tax = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
                 percent = (tax / (income + sd)) * 100
     
-            elif income > federal_brackets[-1]:
+            elif income >= federal_brackets[-1]:
     
-                tax = (income - federal_brackets[i]) * federal_rates[-1] + sum_below[-1]
+                tax = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
                 percent = (tax / (income + sd)) * 100
                 
         #income limit for FICA tax
@@ -242,8 +246,6 @@ def states(b, owed, perc, net):
             
             tax += 9114 + (0.0145 * (income + sd))
             percent = (tax / income) * 100
-            
-            print(9114 + (0.0145 * (income + sd)))
             
         else:
         
@@ -265,18 +267,21 @@ choices = ["Australia", "Canada", "UK", "USA"]
 variable = StringVar()
 variable.set('-----')
 
-Label(win, text = "Select country: ", font = "Bahnschrift 11").place( x = "50", y = "40")
+Label(win, text = "Select country: ", font = "Bahnschrift 11").place( x = "50", \
+    y = "40")
 a = OptionMenu(win, variable, *choices)
 a.config(width = "13", font = "Bahnschrift 10")
 a.place(x = "50", y = "80")
 
 #collecting income to calculate tax owed
-Label(win, text = "Enter annual income: ", font = "Bahnschrift 11").place(x = "50", y = "140")
+Label(win, text = "Enter annual income: ", font = "Bahnschrift 11").place(x = "50", \
+    y = "140")
 b = Entry(win, width = 20)
 b.place(x = "50", y = "180")
 
 #buttons and labels
-Button(win, text = "Calculate", font = "Bahnschrift 11", width = "15", command = tax).place(x = "175", y = "255")
+Button(win, text = "Calculate", font = "Bahnschrift 11", width = "15", command = \
+    tax).place(x = "175", y = "255")
 
 Label(win, text = "Tax owed:", font = "Bahnschrift 11").place(x = "300", y = "50")
 owed = Label(win, font = "Bahnschrift 11")
