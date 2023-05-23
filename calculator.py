@@ -52,7 +52,9 @@ def australia(country_input, tax_owed, tax_percent, net_income):
 
         # appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round(
+                (federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[
+                    j] + sum_below[j - 1])
 
             sum_below.append(s)
 
@@ -67,12 +69,14 @@ def australia(country_input, tax_owed, tax_percent, net_income):
 
             elif income in range(federal_brackets[i], federal_brackets[i + 1]):
 
-                tax_value = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
+                tax_value = (income - federal_brackets[i]) * federal_rates[
+                    i + 1] + sum_below[i]
                 percent = (tax_value / income) * 100
 
             elif income >= federal_brackets[-1]:
 
-                tax_value = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
+                tax_value = (income - federal_brackets[-1]) * federal_rates[
+                    -1] + sum_below[-1]
                 percent = (tax_value / income) * 100
 
         # output values to user
@@ -89,9 +93,9 @@ def australia(country_input, tax_owed, tax_percent, net_income):
 # defining canada function
 def canada(country_input, tax_owed, tax_percent, net_income):
     # lists with Canadian brackets and standard deduction
-    federal_brackets = [0, 50197, 100392, 155625, 221708]
+    federal_brackets = [0, 53359, 106717, 165430, 235675]
     federal_rates = [0, 0.15, 0.205, 0.26, 0.29, 0.33]
-    sd = 14398
+    sd = 15000
 
     # initial user input
     income = float(country_input.get()) - sd
@@ -105,7 +109,9 @@ def canada(country_input, tax_owed, tax_percent, net_income):
 
         # appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round(
+                (federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[
+                    j] + sum_below[j - 1])
 
             sum_below.append(s)
 
@@ -120,12 +126,14 @@ def canada(country_input, tax_owed, tax_percent, net_income):
 
             elif income in range(federal_brackets[i], federal_brackets[i + 1]):
 
-                tax_value = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
+                tax_value = (income - federal_brackets[i]) * federal_rates[
+                    i + 1] + sum_below[i]
                 percent = (tax_value / (income + sd)) * 100
 
             elif income >= federal_brackets[-1]:
 
-                tax_value = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
+                tax_value = (income - federal_brackets[-1]) * federal_rates[
+                    -1] + sum_below[-1]
                 percent = (tax_value / (income + sd)) * 100
 
         # output values to user
@@ -157,7 +165,9 @@ def uk(country_input, tax_owed, tax_percent, net_income):
 
         # appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round(
+                (federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[
+                    j] + sum_below[j - 1])
 
             sum_below.append(s)
 
@@ -172,12 +182,14 @@ def uk(country_input, tax_owed, tax_percent, net_income):
 
             elif income in range(federal_brackets[i], federal_brackets[i + 1]):
 
-                tax_value = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
+                tax_value = (income - federal_brackets[i]) * federal_rates[
+                    i + 1] + sum_below[i]
                 percent = (tax_value / income) * 100
 
             elif income >= federal_brackets[-1]:
 
-                tax_value = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
+                tax_value = (income - federal_brackets[-1]) * federal_rates[
+                    -1] + sum_below[-1]
                 percent = (tax_value / income) * 100
 
         # output values to user
@@ -194,7 +206,7 @@ def uk(country_input, tax_owed, tax_percent, net_income):
 # defining states function
 def states(country_input, tax_owed, tax_percent, net_income):
     # lists with American brackets and standard deduction
-    federal_brackets = [0, 10275, 41775, 89075, 170050, 215950, 539900]
+    federal_brackets = [0, 11000, 44725, 95375, 182100, 231250, 578125]
     federal_rates = [0, 0.1, 0.12, 0.22, 0.24, 0.32, 0.35, 0.37]
     sd = 12950
 
@@ -210,7 +222,9 @@ def states(country_input, tax_owed, tax_percent, net_income):
 
         # appending list sum_below with the sum of tax owed in lower brackets
         for j in range(1, len(federal_brackets)):
-            s = round((federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[j] + sum_below[j - 1])
+            s = round(
+                (federal_brackets[j] - federal_brackets[j - 1]) * federal_rates[
+                    j] + sum_below[j - 1])
 
             sum_below.append(s)
 
@@ -225,12 +239,14 @@ def states(country_input, tax_owed, tax_percent, net_income):
 
             elif income in range(federal_brackets[i], federal_brackets[i + 1]):
 
-                tax_value = (income - federal_brackets[i]) * federal_rates[i + 1] + sum_below[i]
+                tax_value = (income - federal_brackets[i]) * federal_rates[
+                    i + 1] + sum_below[i]
                 percent = (tax_value / (income + sd)) * 100
 
             elif income >= federal_brackets[-1]:
 
-                tax_value = (income - federal_brackets[-1]) * federal_rates[-1] + sum_below[-1]
+                tax_value = (income - federal_brackets[-1]) * federal_rates[
+                    -1] + sum_below[-1]
                 percent = (tax_value / (income + sd)) * 100
 
         # income limit for FICA tax
@@ -266,12 +282,14 @@ a.config(width="13", font="Bahnschrift 10")
 a.place(x="50", y="80")
 
 # collecting income to calculate tax owed
-Label(win, text="Enter annual income: ", font="Bahnschrift 11").place(x="50", y="140")
+Label(win, text="Enter annual income: ", font="Bahnschrift 11").place(x="50",
+                                                                      y="140")
 b = Entry(win, width=20)
 b.place(x="50", y="180")
 
 # buttons and labels
-Button(win, text="Calculate", font="Bahnschrift 11", width="15", command=tax).place(x="175", y="255")
+Button(win, text="Calculate", font="Bahnschrift 11", width="15",
+       command=tax).place(x="175", y="255")
 
 Label(win, text="Tax owed:", font="Bahnschrift 11").place(x="300", y="50")
 owed = Label(win, font="Bahnschrift 11")
