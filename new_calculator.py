@@ -21,3 +21,9 @@ class Federal:
             return 13850
         else:
             return 0
+
+    def taxable_income(self):
+        if self.income > self.standard_deduction():
+            return self.income - self.standard_deduction()
+        else:
+            return 0
