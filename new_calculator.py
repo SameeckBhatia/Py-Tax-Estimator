@@ -8,6 +8,8 @@ class Federal:
     def __init__(self, country: str, income: float) -> None:
         self.country = country
         self.income = income
+        self.name = country
+        self.data = "federal_brackets.csv"
 
     def standard_deduction(self) -> float:
         if self.country == "Canada":
