@@ -29,3 +29,25 @@ class Federal:
             return self.income - self.standard_deduction()
         else:
             return 0
+
+    def base_tax(self) -> float:
+
+        df = pd.read_csv(self.data)
+        df = df[df["name"] == self.name].reset_index(drop=True)
+
+        df["high"] = np.array(list(df["low"][1:]) + [0])
+
+        below = [0]
+        below += [row["rate"] * (row["high"] - row["low"])
+                  for index, row in df[:-1].iterrows()]
+
+        df["total_below"] = pd.Series(below).cumsum()
+
+        base_tax = 0
+
+        for index, row in df.iterrows():
+            if self.taxable_income() in range(row["low"], row["high"]):
+                base_tax += row["rate"] * (self.taxable_income() - row["low"])
+                base_tax += row["total_below"]
+
+        return base_tax
