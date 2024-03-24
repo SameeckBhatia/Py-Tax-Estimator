@@ -24,7 +24,7 @@ class Federal:
         else:
             return 0
 
-    def taxable_income(self):
+    def taxable_income(self) -> Union[int, float]:
         if self.income > self.standard_deduction():
             return self.income - self.standard_deduction()
         else:
