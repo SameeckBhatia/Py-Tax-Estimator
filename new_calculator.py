@@ -51,3 +51,10 @@ class Federal:
                 base_tax += row["total_below"]
 
         return base_tax
+
+    def additional_tax(self) -> Union[int, float]:
+
+        if self.name == "Canada":
+            cpp = 0.0595 * (self.income - 3500)
+            ei = 0.0166 * self.income
+            return cpp + ei
