@@ -58,3 +58,7 @@ class Federal:
             cpp = 0.0595 * (self.income - 3500)
             ei = 0.0166 * self.income
             return cpp + ei
+        elif self.name == "United States":
+            ssa = 0.062 * self.income if self.income < 168600 else 0.062 * 168600
+            medicare = 0.0145 * self.income
+            return ssa + medicare
