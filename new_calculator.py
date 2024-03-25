@@ -62,3 +62,11 @@ class Federal:
             ssa = 0.062 * self.income if self.income < 168600 else 0.062 * 168600
             medicare = 0.0145 * self.income
             return ssa + medicare
+
+
+class State(Federal):
+
+    def __init__(self, country: str, state: str, income: float):
+        super().__init__(country, income)
+        self.name = state
+        self.data = "state_brackets.csv"
