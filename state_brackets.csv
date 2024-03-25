@@ -1,0 +1,32 @@
+name,rate,low
+British Columbia,0.0506,0
+British Columbia,0.077,47937
+British Columbia,0.105,95875
+British Columbia,0.1229,110076
+British Columbia,0.147,133664
+British Columbia,0.168,181232
+British Columbia,0.205,252752
+California,0.01,0
+California,0.02,10412
+California,0.04,24684
+California,0.06,38959
+California,0.08,54081
+California,0.093,68350
+California,0.103,349137
+California,0.113,418961
+California,0.123,698271
+California,0.133,1000000
+New York,0.04,0
+New York,0.045,8500
+New York,0.0525,11700
+New York,0.055,13900
+New York,0.06,80650
+New York,0.0685,215400
+New York,0.0965,1077550
+New York,0.103,5000000
+New York,0.109,25000000
+Ontario,0.0505,0
+Ontario,0.0915,51446
+Ontario,0.1116,102894
+Ontario,0.1216,150000
+Ontario,0.1316,220000
