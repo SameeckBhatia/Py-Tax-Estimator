@@ -65,6 +65,10 @@ class Federal:
         else:
             return 0
 
+    def total_tax(self):
+
+        return self.base_tax() + self.additional_tax()
+
 
 class State(Federal):
 
