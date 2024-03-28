@@ -62,6 +62,8 @@ class Federal:
             ssa = 0.062 * self.income if self.income < 168600 else 0.062 * 168600
             medicare = 0.0145 * self.income
             return ssa + medicare
+        else:
+            return 0
 
 
 class State(Federal):
