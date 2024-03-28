@@ -76,3 +76,16 @@ class State(Federal):
         super().__init__(country, income)
         self.name = state
         self.data = "state_brackets.csv"
+
+    def base_tax(self):
+        if self.name in ["Florida", "Texas"]:
+            return 0
+        else:
+            return super().base_tax()
+
+    def total_tax(self):
+        if self.name in ["Florida", "Texas"]:
+            return 0
+        else:
+            return super().total_tax()
+        
