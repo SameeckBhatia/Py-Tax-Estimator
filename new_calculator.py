@@ -1,12 +1,13 @@
-import pandas as pd
-import numpy as np
 from typing import Union
+
+import numpy as np
+import pandas as pd
 
 
 class Federal:
     """
-    This class represents a federal taxpayer and calculates their tax liability
-    based on income and country of residence.
+    This class calculates federal tax liability based on income and country
+    of residence.
 
     >>> canada = Federal("Canada", 50000)
     >>> canada.base_tax()
@@ -88,8 +89,23 @@ class Federal:
 
 
 class State(Federal):
+    """
+    This class calculates state/province tax liability based on income and
+    state/province of residence. Inherits from the Federal class.
 
-    def __init__(self, country: str, state: str, income: float):
+    >>> ontario = State("Canada", "Ontario", 50000)
+    >>> ontario.base_tax()
+    1731.8975
+    >>> ontario.additional_tax()
+    0
+    >>> ontario.total_tax()
+    1731.8975
+    """
+
+    state: str
+
+    def __init__(self, country: str, state: str,
+                 income: Union[int, float]) -> None:
         super().__init__(country, income)
         self.name = state
         self.data = "state_brackets.csv"
