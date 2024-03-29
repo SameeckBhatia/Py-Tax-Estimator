@@ -4,8 +4,25 @@ from typing import Union
 
 
 class Federal:
+    """
+    This class represents a federal taxpayer and calculates their tax liability
+    based on income and country of residence.
 
-    def __init__(self, country: str, income: float) -> None:
+    >>> canada = Federal("Canada", 50000)
+    >>> canada.base_tax()
+    5144.25
+    >>> canada.additional_tax()
+    3596.75
+    >>> canada.total_tax()
+    3596.75
+    """
+
+    country: str
+    income: Union[int, float]
+    name: str
+    data: str
+
+    def __init__(self, country: str, income: Union[int, float]) -> None:
         self.country = country
         self.income = income
         self.name = country
@@ -88,4 +105,3 @@ class State(Federal):
             return 0
         else:
             return super().total_tax()
-        
