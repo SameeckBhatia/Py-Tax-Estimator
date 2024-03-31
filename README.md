@@ -1,9 +1,9 @@
-## PyTaxEstimator
+# PyTaxEstimator
 
-### About
-This Python library provides a comprehensive solution for calculating 2024 federal and state/provincial taxes for various countries due in 2025. It simplifies the process of determining your federal and state tax liability based on your income and residence.
+## About
+This Python library provides a comprehensive solution for calculating 2024 federal and state/provincial taxes for various countries due in 2025. It simplifies the process of determining your federal and state tax liability based on your income and residence, while factoring in standard deductions and payroll taxes.
 
-### Class Structure
+## Class Structure
 **Federal:**
 - This class serves as the foundation for tax calculations. It takes the country and income as input and provides methods for calculating standard deduction, taxable income, base tax, additional taxes, and total tax.
 - Additional taxes include:
@@ -16,7 +16,7 @@ This Python library provides a comprehensive solution for calculating 2024 feder
   - British Columbia, Ontario
   - California, Florida, New York, Texas
  
-### Data Files
+## Data Files
 
 The code relies on two CSV files containing tax bracket data for different countries and states/provinces. These files need to be structured appropriately to ensure accurate tax calculations.
 
@@ -24,7 +24,7 @@ The files are:
 - `federal_brackets.csv`
 - `state_brackets.csv`
 
-### Future Enhancements
+## Future Enhancements
 
 1. Integration with external APIs for real-time tax data.
 2. Support for a wider range of countries, states, and provinces.
