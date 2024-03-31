@@ -1,7 +1,7 @@
-## Tax Calculator
+## PyTaxEstimator
 
 ### About
-This Python library provides a comprehensive solution for calculating federal and state/provincial taxes for various countries. It simplifies the process of determining your federal and state tax liability based on your income and residence.
+This Python library provides a comprehensive solution for calculating 2024 federal and state/provincial taxes for various countries due in 2025. It simplifies the process of determining your federal and state tax liability based on your income and residence.
 
 ### Class Structure
 **Federal:**
