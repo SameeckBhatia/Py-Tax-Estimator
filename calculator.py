@@ -27,7 +27,7 @@ class Federal:
         self.country = country
         self.income = income
         self.name = country
-        self.data = "federal_brackets.csv"
+        self.data = "brackets/federal_brackets.csv"
 
     def standard_deduction(self) -> float:
         if self.country == "Canada":
@@ -105,7 +105,7 @@ class State(Federal):
                  income: Union[int, float]) -> None:
         super().__init__(country, income)
         self.name = state
-        self.data = "state_brackets.csv"
+        self.data = "brackets/state_brackets.csv"
 
     def base_tax(self):
         if self.name in ["Florida", "Texas"]:
