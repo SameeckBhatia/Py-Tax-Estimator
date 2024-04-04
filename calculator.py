@@ -49,7 +49,6 @@ class Federal:
             return 0
 
     def base_tax(self) -> float:
-
         df = pd.read_csv(self.data)
         df = df[df["name"] == self.name].reset_index(drop=True)
 
@@ -71,7 +70,6 @@ class Federal:
         return base_tax
 
     def additional_tax(self) -> Union[int, float]:
-
         if self.name == "Canada":
             cpp = 0.0595 * (self.income - 3500)
             ei = 0.0166 * self.income
@@ -84,7 +82,6 @@ class Federal:
             return 0
 
     def total_tax(self):
-
         return self.base_tax() + self.additional_tax()
 
 
