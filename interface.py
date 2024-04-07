@@ -10,6 +10,23 @@ win.config(background="#2D3339")
 win.resizable(width=False, height=False)
 win.title("Tax Estimator")
 
+country_state_dict = {"Canada": ["British Columbia", "Ontario"],
+                      "United States": ["California", "Florida",
+                                        "New York", "Texas"]}
+
+
+def update_options(*args):
+    dropdown2["menu"].delete(0, "end")
+
+    selected_value = choice1.get()
+
+    second_options = country_state_dict[selected_value]
+
+    for option in second_options:
+        dropdown2["menu"].add_command(label=option,
+                                      command=tk._setit(choice2, option))
+
+
 # Labels
 label1 = tk.Label(win, text="Select country", font=("Segoe UI", 14),
                   background="#2D3339", foreground="#FBF4E9")
@@ -30,5 +47,7 @@ choice2 = tk.StringVar(win)
 choice2.set("(state/province)")
 dropdown2 = tk.OptionMenu(win, choice2, "")
 dropdown2.place(relx=0.5, rely=0.45, relwidth=0.5, anchor=tk.CENTER)
+
+choice1.trace("w", update_options)
 
 win.mainloop()
