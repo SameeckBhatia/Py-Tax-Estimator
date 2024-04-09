@@ -35,12 +35,10 @@ label1.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
 label2 = tk.Label(win, text="Select state/province", font=("Segoe UI", 14),
                   background="#2D3339", foreground="#FBF4E9")
 label2.place(relx=0.5, rely=0.35, anchor=tk.CENTER)
-label2.place(relx=0.5, rely=0.33, anchor=tk.CENTER)
 
 label3 = tk.Label(win, text="Enter income", font=("Segoe UI", 14),
                   background="#2D3339", foreground="#FBF4E9")
 label3.place(relx=0.5, rely=0.6, anchor=tk.CENTER)
-label3.place(relx=0.5, rely=0.57, anchor=tk.CENTER)
 
 # Dropdowns
 options = ["Canada", "United States"]
@@ -53,7 +51,6 @@ choice2 = tk.StringVar(win)
 choice2.set("(state/province)")
 dropdown2 = tk.OptionMenu(win, choice2, "")
 dropdown2.place(relx=0.5, rely=0.45, relwidth=0.5, anchor=tk.CENTER)
-dropdown2.place(relx=0.5, rely=0.43, relwidth=0.5, anchor=tk.CENTER)
 
 choice1.trace("w", update_options)
 
@@ -61,7 +58,6 @@ choice1.trace("w", update_options)
 entry1 = tk.Entry(win, font=("Segoe UI", 12), background="#434C56",
                   foreground="#FBF4E9")
 entry1.place(relx=0.5, rely=0.7, relwidth=0.5, anchor=tk.CENTER)
-entry1.place(relx=0.5, rely=0.67, relwidth=0.5, anchor=tk.CENTER)
 
 # Buttons
 button1 = tk.Button(win, text="Click me!", command="",
