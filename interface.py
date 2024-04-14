@@ -60,7 +60,7 @@ entry1 = tk.Entry(win, font=("Segoe UI", 12), background="#434C56",
 entry1.place(relx=0.5, rely=0.65, relwidth=0.5, anchor=tk.CENTER)
 
 # Buttons
-button1 = tk.Button(win, text="Click me!", command="",
+button1 = tk.Button(win, text="Calculate", command="",
                     font=("Segoe UI", 11), foreground="#FBF4E9",
                     background="#E65A45")
 button1.place(relx=0.5, rely=0.85, anchor=tk.CENTER, relwidth=0.4,
