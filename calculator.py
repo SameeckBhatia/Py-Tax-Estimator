@@ -38,7 +38,7 @@ class Federal:
             else:
                 return -0.02105 * (self.income - 173205) + 15705
         elif self.country == "United States":
-            return 13850
+            return 14600
         else:
             return 0
 
