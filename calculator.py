@@ -114,9 +114,3 @@ class State(Federal):
             return 0
         else:
             return super().base_tax()
-
-    def total_tax(self):
-        if self.name in ["Florida", "Texas"]:
-            return 0
-        else:
-            return super().total_tax()
