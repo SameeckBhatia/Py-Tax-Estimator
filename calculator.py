@@ -3,6 +3,8 @@ from typing import Union
 import numpy as np
 import pandas as pd
 
+no_tax_states = ["Florida", "Texas"]
+
 
 class Federal:
     """
@@ -110,7 +112,7 @@ class State(Federal):
         self.data = "brackets/state_brackets.csv"
 
     def base_tax(self):
-        if self.name in ["Florida", "Texas"]:
+        if self.name in no_tax_states:
             return 0
         else:
             return super().base_tax()
