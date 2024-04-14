@@ -15,7 +15,7 @@ class Federal:
     >>> canada.additional_tax()
     3596.75
     >>> canada.total_tax()
-    3596.75
+    8741.0
     """
 
     country: str
