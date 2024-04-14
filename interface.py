@@ -11,7 +11,7 @@ win.resizable(width=False, height=False)
 win.title("Tax Estimator")
 
 country_state_dict = {"Canada": ["British Columbia", "Ontario"],
-                      "United States": ["California", "Florida",
+                      "United States": ["California", "Florida", "Pennsylvania",
                                         "New York", "Texas"]}
 
 

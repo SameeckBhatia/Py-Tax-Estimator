@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 no_tax_states = ["Florida", "Texas"]
+flat_tax_states = {"Pennsylvania": 0.0307}
 
 
 class Federal:
@@ -114,5 +115,7 @@ class State(Federal):
     def base_tax(self):
         if self.name in no_tax_states:
             return 0
+        elif self.name in flat_tax_states.keys():
+            return flat_tax_states[self.name] * self.taxable_income()
         else:
             return super().base_tax()
