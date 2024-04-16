@@ -15,9 +15,17 @@ This Python library provides a comprehensive solution for calculating 2024 feder
   - British Columbia, Ontario
   - California, Florida, Pennsylvania, New York, Texas
  
+## Calculator Files
+
+The code depends on two Python files, a frontend and a backend, that allow the user to interact with the calculator.
+
+The files are:
+- `calculator.py`
+- `interface.py`
+ 
 ## Data Files
 
-The code relies on two CSV files containing tax bracket data for different countries and states/provinces. These files need to be structured appropriately to ensure accurate tax calculations.
+The code relies on two CSV files containing tax bracket data for different countries and states/provinces.
 
 The files are:
 - `federal_brackets.csv`
