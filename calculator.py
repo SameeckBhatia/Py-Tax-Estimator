@@ -28,7 +28,7 @@ class Federal:
 
     def __init__(self, country: str, income: Union[int, float]) -> None:
         self.country = country
-        self.income = income
+        self.income = (income if income > 0 else 0)
         self.name = country
         self.data = "brackets/federal_brackets.csv"
 
@@ -69,14 +69,14 @@ class Federal:
         for index, row in df.iterrows():
             if (income in range(row["low"], row["high"])) or \
                     (income >= row["low"] and index == (len(df) - 1)):
-                base_tax += row["rate"] * (self.taxable_income() - row["low"])
+                base_tax += row["rate"] * (income - row["low"])
                 base_tax += row["total_below"]
 
         return base_tax
 
     def additional_tax(self) -> Union[int, float]:
         if self.name == "Canada":
-            cpp = 0.0595 * (self.income - 3500)
+            cpp = 0.0595 * (self.income - 3500 if self.income > 3500 else 0)
             ei = 0.0166 * self.income
             return cpp + ei
         elif self.name == "United States":
@@ -115,7 +115,7 @@ class State(Federal):
     def base_tax(self):
         if self.name in no_tax_states:
             return 0
-        elif self.name in flat_tax_states.keys():
+        elif self.name in flat_tax_states:
             return flat_tax_states[self.name] * self.taxable_income()
         else:
             return super().base_tax()
