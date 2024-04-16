@@ -59,8 +59,36 @@ entry1 = tk.Entry(win, font=("Segoe UI", 12), background="#434C56",
                   foreground="#FBF4E9")
 entry1.place(relx=0.5, rely=0.65, relwidth=0.5, anchor=tk.CENTER)
 
+
+# Button function
+def display_tax():
+    country, state, income = choice1.get(), choice2.get(), float(entry1.get())
+    total_tax = (Federal(country, income).total_tax() +
+                 State(country, state, income).total_tax())
+    avg_rate = 100 * (total_tax / income)
+    net_income = income - total_tax
+
+    win1 = tk.Tk()
+    win1.geometry("600x300")
+    win1.config(background="#2D3339")
+    win1.resizable(width=False, height=False)
+    win1.title("Estimate")
+
+    tk.Label(win1, text=f"You owe ${total_tax:,.2f} in total taxes",
+             font=("Segoe UI", 14), background="#2D3339",
+             foreground="#FBF4E9").place(relx=0.5, rely=0.25, anchor=tk.CENTER)
+    tk.Label(win1, text=f"The average rate is {avg_rate:.2f}%",
+             font=("Segoe UI", 14), background="#2D3339",
+             foreground="#FBF4E9").place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+    tk.Label(win1, text=f"Your net income is ${net_income:,.2f}%",
+             font=("Segoe UI", 14), background="#2D3339",
+             foreground="#FBF4E9").place(relx=0.5, rely=0.75, anchor=tk.CENTER)
+
+    win1.mainloop()
+
+
 # Buttons
-button1 = tk.Button(win, text="Calculate", command="",
+button1 = tk.Button(win, text="Calculate", command=display_tax,
                     font=("Segoe UI", 11), foreground="#FBF4E9",
                     background="#E65A45")
 button1.place(relx=0.5, rely=0.85, anchor=tk.CENTER, relwidth=0.4,
