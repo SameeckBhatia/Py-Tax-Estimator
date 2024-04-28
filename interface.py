@@ -11,9 +11,9 @@ win.resizable(width=False, height=False)
 win.title("Tax Estimator")
 
 country_state_dict = {"Canada": ["British Columbia", "Ontario"],
-                      "United States": ["California", "Illinois", "Florida",
-                                        "New York", "Ohio", "Pennsylvania",
-                                        "Texas"]}
+                      "United States": ["California", "Georgia", "Illinois",
+                                        "Florida", "New York", "Ohio",
+                                        "Pennsylvania", "Texas"]}
 
 
 def update_options(*args):
