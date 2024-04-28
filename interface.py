@@ -11,8 +11,8 @@ win.resizable(width=False, height=False)
 win.title("Tax Estimator")
 
 country_state_dict = {"Canada": ["British Columbia", "Ontario"],
-                      "United States": ["California", "Georgia", "Illinois",
-                                        "Florida", "New York", "Ohio",
+                      "United States": ["California", "Florida", "Georgia",
+                                        "Illinois", "New York", "Ohio",
                                         "Pennsylvania", "Texas"]}
 
 
@@ -81,7 +81,7 @@ def display_tax():
     tk.Label(win1, text=f"The average rate is {avg_rate:.2f}%",
              font=("Segoe UI", 14), background="#2D3339",
              foreground="#FBF4E9").place(relx=0.5, rely=0.5, anchor=tk.CENTER)
-    tk.Label(win1, text=f"Your net income is ${net_income:,.2f}%",
+    tk.Label(win1, text=f"Your net income is ${net_income:,.2f}",
              font=("Segoe UI", 14), background="#2D3339",
              foreground="#FBF4E9").place(relx=0.5, rely=0.75, anchor=tk.CENTER)
 
