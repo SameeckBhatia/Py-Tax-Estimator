@@ -10,7 +10,8 @@ win.config(background="#2D3339")
 win.resizable(width=False, height=False)
 win.title("Tax Estimator")
 
-country_state_dict = {"Canada": ["British Columbia", "Ontario"],
+country_state_dict = {"Canada": ["Alberta", "British Columbia", "Ontario",
+                                 "Quebec"],
                       "United States": ["California", "Florida", "Georgia",
                                         "Illinois", "New York", "Ohio",
                                         "Pennsylvania", "Texas"]}
