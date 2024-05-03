@@ -65,11 +65,11 @@ class Federal:
         df["total_below"] = pd.Series(below).cumsum()
 
         base_tax = 0
-        income = self.taxable_income()
+        income = int(self.taxable_income())
 
         for index, row in df.iterrows():
             if (income in range(row["low"], row["high"])) or \
-                    (income >= row["low"] and index == (len(df) - 1)):
+                    (income >= row["low"] and index == len(df) - 1):
                 base_tax += row["rate"] * (income - row["low"])
                 base_tax += row["total_below"]
 
