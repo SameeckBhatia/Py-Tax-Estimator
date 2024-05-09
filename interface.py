@@ -44,7 +44,7 @@ label3 = tk.Label(win, text="Enter income", font=("Segoe UI", 14),
 label3.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
 
 # Dropdowns
-options = ["Canada", "United States"]
+options = country_state_dict.keys()
 choice1 = tk.StringVar(win)
 choice1.set("(country)")
 dropdown1 = tk.OptionMenu(win, choice1, *options)
