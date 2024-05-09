@@ -12,6 +12,7 @@ win.title("Tax Estimator")
 
 country_state_dict = {"Canada": ["Alberta", "British Columbia", "Ontario",
                                  "Quebec"],
+                      "United Kingdom": ["Not Scotland"],
                       "United States": ["California", "Florida", "Georgia",
                                         "Illinois", "New York", "Ohio",
                                         "Pennsylvania", "Texas"]}

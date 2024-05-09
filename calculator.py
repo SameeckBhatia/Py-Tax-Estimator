@@ -3,7 +3,7 @@ from typing import Union
 import numpy as np
 import pandas as pd
 
-no_tax_states = ["Florida", "Texas"]
+no_tax_states = ["Florida", "Texas", "Not Scotland"]
 flat_tax_states = {"Georgia": 0.0549, "Illinois": 0.0495,
                    "Pennsylvania": 0.0307}
 
@@ -41,6 +41,13 @@ class Federal:
                 return 14156
             else:
                 return -0.02105 * (self.income - 173205) + 15705
+        elif self.country == "United Kingdom":
+            if self.income <= 100000:
+                return 12570
+            elif self.income <= 125140:
+                return -0.5 * (self.income - 100000) + 12570
+            else:
+                return 0
         elif self.country == "United States":
             return 14600
         else:
@@ -80,6 +87,13 @@ class Federal:
             cpp = 0.0595 * (self.income - 3500 if self.income > 3500 else 0)
             ei = 0.0166 * self.income
             return cpp + ei
+        elif self.name == "United Kingdom":
+            ni = 0
+            if int(7 * self.income / 365) in range(242, 967):
+                ni += 0.08 * self.taxable_income()
+            elif int(7 * self.income / 365) >= 967:
+                ni += 0.02 * (self.income - 50422.14) + 3024.29
+            return ni
         elif self.name == "United States":
             ssa = 0.062 * self.income if self.income < 168600 else 0.062 * 168600
             medicare = 0.0145 * self.income
