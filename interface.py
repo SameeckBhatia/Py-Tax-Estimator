@@ -1,6 +1,7 @@
 import tkinter as tk
-from calculator import *
 from ctypes import windll
+
+from calculator import *
 
 windll.shcore.SetProcessDpiAwareness(2)
 
