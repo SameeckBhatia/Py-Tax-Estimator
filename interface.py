@@ -12,7 +12,7 @@ win.title("Tax Estimator")
 
 country_state_dict = {"Canada": ["Alberta", "British Columbia", "Ontario",
                                  "Quebec"],
-                      "United Kingdom": ["Not Scotland"],
+                      "United Kingdom": ["Not Scotland", "Scotland"],
                       "United States": ["California", "Florida", "Georgia",
                                         "Illinois", "New York", "Ohio",
                                         "Pennsylvania", "Texas"]}
@@ -66,8 +66,13 @@ entry1.place(relx=0.5, rely=0.65, relwidth=0.5, anchor=tk.CENTER)
 # Button function
 def display_tax():
     country, state, income = choice1.get(), choice2.get(), float(entry1.get())
-    total_tax = (Federal(country, income).total_tax() +
-                 State(country, state, income).total_tax())
+
+    if (country, state) == ("United Kingdom", "Scotland"):
+        total_tax = (Federal(country, income).additional_tax() +
+                     State(country, state, income).total_tax())
+    else:
+        total_tax = (Federal(country, income).total_tax() +
+                     State(country, state, income).total_tax())
     avg_rate = 100 * (total_tax / income)
     net_income = income - total_tax
 
