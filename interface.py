@@ -15,8 +15,8 @@ country_state_dict = {"Canada": ["Alberta", "British Columbia", "Manitoba",
                                  "Ontario", "Quebec", "Saskatchewan"],
                       "United Kingdom": ["Not Scotland", "Scotland"],
                       "United States": ["California", "Florida", "Georgia",
-                                        "Illinois", "New York", "Ohio",
-                                        "Pennsylvania", "Texas"]}
+                                        "Illinois", "New York", "North Carolina",
+                                        "Ohio", "Pennsylvania", "Texas"]}
 
 
 def update_options(*args):
