@@ -13,7 +13,7 @@ This Python library provides a comprehensive solution for calculating 2024 feder
 **State:**
 - This class inherits from Federal and adds functionalities specific to state/provincial tax calculations. It considers the state/province of residence and incorporates its tax brackets.
 - Compatible states include:
-  - Alberta, British Columbia, Manitoba, Ontario, Quebec, Saskatchewan
+  - Alberta, British Columbia, Manitoba, Nova Scotia, Ontario, Quebec, Saskatchewan
   - California, Florida, Georgia, Illinois, Pennsylvania, New York, Ohio, Texas
   - Not Scotland, Scotland
  
