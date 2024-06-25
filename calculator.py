@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 no_tax_states = ["Florida", "Texas", "Not Scotland"]
-flat_tax_states = {"Georgia": 0.0549, "Illinois": 0.0495,
+flat_tax_states = {"Georgia": 0.0549, "Illinois": 0.0495, "Michigan": 0.0425,
                    "North Carolina": 0.0475, "Pennsylvania": 0.0307}
 
 

@@ -16,8 +16,9 @@ country_state_dict = {
                "Ontario", "Quebec", "Saskatchewan"],
     "United Kingdom": ["Not Scotland", "Scotland"],
     "United States": ["California", "Florida", "Georgia",
-                      "Illinois", "New York", "North Carolina",
-                      "Ohio", "Pennsylvania", "Texas"]
+                      "Illinois", "Michigan", "New York",
+                      "North Carolina", "Ohio", "Pennsylvania",
+                      "Texas"]
 }
 
 
